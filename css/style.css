@@ -1,0 +1,143 @@
+body{
+	background-color: #224066;
+}
+
+#hero {
+
+	width: 250px;
+	height: 358px;
+	/*background: white;*/
+	position: relative;
+	left: 200px;
+	top: 200px;
+
+}
+
+@keyframes hero-stance {
+	from {
+		top: 0;
+	}
+	to {
+		top: -20px;
+	}
+}
+
+#hero .stance {
+    visibility: hidden;
+	background-image: url(../img/lazer.png);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	animation-name: hero-stance;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+
+}
+
+#hero .attack {
+    visibility: hidden;
+	background-image: url(../img/attak.png);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top:0;
+	z-index: 2;
+
+}
+
+#hero.idle .stance {
+
+	visibility: visible;
+}
+
+#hero.attack .attack {
+
+	visibility: visible;
+	top: -30px;
+}
+
+@keyframes shadow {
+	from{
+		width: 250px;
+	}
+	to {
+		width: 225px;
+		left: 12.5px;
+	}
+}
+
+#hero .shadow {
+	background-image: url(../img/shadow.png);
+	width: 250px;
+	height: 84px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	bottom:-50px;
+	z-index: 1;
+	animation-name: shadow;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+
+}
+
+#hero.attack .shadow {
+	animation-name: none;
+	width: 225px;
+	left: 12.5px;
+
+}
+
+#hero .text {
+	font-size: 55px;
+	font-weight: bold;
+	color: white;
+	width: 310px;
+	position: absolute;
+	left: 130%;
+	top: -10px;
+}
+@keyframes isiq {
+	from {
+		width: 175px;
+	}
+	to {
+		width: 525px;
+	}
+}
+#hero .isiq {
+    background-image: url(../img/isiq.png);
+	width: 175px;
+	height: 70px;
+	position: absolute;
+	left: 140px;
+	top: 15px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	animation-name: isiq;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#hero .isiq::after {
+
+	content: " ";
+	width: 4px;
+	height: 100%;
+	right: 0;
+	top: 1px;
+	background-color: #ffe500;
+	position: absolute;
+	border-radius: 3px;
+	box-shadow: 0 0 3px 3px #ffe500;
+}
